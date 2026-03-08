@@ -7,4 +7,4 @@ Mini project built during my Python course.
 - Game loop logic
 
 ## Status
-In progress.
+Completed.

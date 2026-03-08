@@ -12,7 +12,7 @@ car_manager = CarManager()
 screen.listen()
 screen.onkey(player.turtle_moving, "Up")
 
-
+car_speed = "fast"
 
 
 
@@ -24,6 +24,15 @@ while game_is_on:
     car_manager.car()
     car_manager.car_movement()
 
+#   Detect if the car hit the turtle
+    for car in car_manager.all_cars:
+        if car.distance(player) < 20:
+            game_is_on = False
+
+#   Detect successful crossing
+    if player.turtle_finish():
+        player.go_to_start()
+        car_manager.level_up()
 
 
 

@@ -10,7 +10,7 @@ STARTING_POSITION = ()
 class CarManager:
     def __init__(self):
         self.all_cars =[]
-
+        self.car_speed = STARTING_MOVE_DISTANCE
 
     def car(self):
         random_chance = random.randint(1,6)
@@ -22,12 +22,12 @@ class CarManager:
             new_car.color(random.choice(COLORS))
             self.all_cars.append(new_car)
 
-
-
     def car_movement(self):
         for car in self.all_cars:
-            car.backward(STARTING_MOVE_DISTANCE)
+            car.backward(self.car_speed)
 
+    def level_up(self):
+        self.car_speed += MOVE_INCREMENT
 
 
 
